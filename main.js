@@ -57,7 +57,7 @@ boton.onclick = function() {
                 saldo -= productos[i].precio * cantidad;
                 if (saldo < 0) {
                     alert("No tienes suficiente dinero para comprar " + cantidad + " " + productos[i].nombre);
-                    saldo += productos[i].precio * cantidad; // Revertir el cambio
+                    saldo += productos[i].precio * cantidad;
                 } else {
                     alert("Has comprado " + cantidad + " " + productos[i].nombre + ". Te quedan " + saldo + " pesos.");
                 }
@@ -69,7 +69,12 @@ boton.onclick = function() {
         }
         let mas = prompt("¿Desea comprar otro producto? (si/no)");
         if (mas && mas.toLowerCase() === "no") {
-            seguirComprando = false;
+            seguirComprando = false;}
+            else if (mas.toLowerCase() === "si"){
+            } else {
+            alert("Respuesta no válida, por favor ingrese 'si' o 'no'.");
+
+            
         }
     }
     alert("Gracias por su compra, " + saldo + " pesos restantes.");
